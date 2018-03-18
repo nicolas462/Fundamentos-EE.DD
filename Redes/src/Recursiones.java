@@ -31,12 +31,13 @@ public class Recursiones {
 		else
 			return n + mult (n, x-1);
 	}
-	//Esta función retorma 
+	/*Esta función retorna la cifra de las coordenadas ingresadas dentro del
+		triángulo de pascal */
 	public static int pasc (int n, int k) {
 		if (k==0 || k==n)
 			return 1;
-			else 
-				return pasc (n-1, k) + pasc (n-1, k-1);
+		else 
+			return pasc (n-1, k) + pasc (n-1, k-1);
 	}
 	
 	public static void main(String[] args) {
@@ -45,6 +46,7 @@ public class Recursiones {
 		n = sc.nextInt();
 		k = sc.nextInt();
 		mul = pasc(n, k);	
+		System.out.println(mul);
 
 	}
 }
