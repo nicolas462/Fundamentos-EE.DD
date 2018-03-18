@@ -37,22 +37,14 @@ public class Recursiones {
 			return 1;
 			else 
 				return pasc (n-1, k) + pasc (n-1, k-1);
-		
-		
-		
 	}
 	
 	public static void main(String[] args) {
-		try {
 		Scanner sc = new Scanner(System.in);
 		int n, x, mul, k;
 		n = sc.nextInt();
 		k = sc.nextInt();
-		mul = pasc(n, k);
-		System.out.println(mul);
-		}
-		catch (Exception ex) {}
-		
-	}
+		mul = pasc(n, k);	
 
+	}
 }
