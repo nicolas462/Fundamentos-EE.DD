@@ -1,7 +1,8 @@
 import java.util.Scanner;
 
 /**
- * Esta clase muestra: Factorial, Serie de Fibonacci, Multiplicación y Triángulo de Pascal.
+ * Esta clase muestra: Factorial, Serie de Fibonacci, Multiplicación y Triángulo de Pascal
+ * en forma de recursiones.
  * @author Nicolás Espejo
  *
  */
