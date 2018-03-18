@@ -33,7 +33,8 @@ public class Recursiones {
 	}
 	/*Esta función retorna la cifra de las coordenadas ingresadas dentro del
 		triángulo de pascal */
-	public static int pasc (int n, int k) {
+	public static int pasc (int n, int k) //n= columnas. k= filas.
+	{
 		if (k==0 || k==n)
 			return 1;
 		else 
@@ -41,12 +42,5 @@ public class Recursiones {
 	}
 	
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int n, x, mul, k;
-		n = sc.nextInt();
-		k = sc.nextInt();
-		mul = pasc(n, k);	
-		System.out.println(mul);
-
 	}
 }
