@@ -2,7 +2,7 @@
 # To change this template file, choose Tools | Templates
 # and open the template in the editor.
 
-__author__ = "USER"
+__author__ = "Nicolás Espejo"
 __date__ = "$19/03/2018 05:27:24 PM$"
 
 class Recursiones(object):
