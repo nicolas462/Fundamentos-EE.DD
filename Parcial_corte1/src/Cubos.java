@@ -25,8 +25,8 @@ class Cubos {
 				md = mcd(md, c);
 				result = (a/md)*(b/md)*(c/md);
 				bw.write(md + " " + result + "\n");
-				bw.flush();
 			}
+			bw.flush();
 			bw.close();
 		}
 		catch (Exception ex) {}
