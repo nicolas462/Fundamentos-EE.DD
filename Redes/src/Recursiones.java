@@ -101,7 +101,6 @@ public class Recursiones {
 		else {
 			return inversa_cadena (cadena.substring(1, cadena.length())) + cadena.charAt(0) ;
 		}
-		
 	}
 	/**
 	 * Llama a las funciones con parámetros ya establecidos para ejecutarlas.
@@ -137,7 +136,7 @@ public class Recursiones {
 			 * 1	8	28	56	70	56	28	8	1	
 			 * 1	9	36	84	126	126	84	36	9	1
 			 */
-			
+			System.out.println();
 			bw.flush();
 		}
 		catch(Exception ex)
