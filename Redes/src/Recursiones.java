@@ -82,7 +82,7 @@ public class Recursiones {
 	 * @param x Multiplicador.
 	 * @return Retorna el resultado de la multiplicación entre los números ingresados.
 	 */
-	public static int multiplicacion (int n, int x){
+	public int multiplicacion (int n, int x){
 		if (x==1)
 			return n;
 		else
