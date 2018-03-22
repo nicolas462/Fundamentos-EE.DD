@@ -136,8 +136,6 @@ public class Recursiones {
 			 * 1	8	28	56	70	56	28	8	1	
 			 * 1	9	36	84	126	126	84	36	9	1
 			 */
-
-			
 			bw.flush();
 		}
 		catch(Exception ex)
