@@ -13,9 +13,8 @@ class Cubos {
 			BufferedReader br = new BufferedReader(new InputStreamReader ( System.in ));
 			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter ( System.out ));
 			int a, b, c, result;
-			String cases = br.readLine();
-			int numcases = Integer.parseInt(cases);
-			for(int i =0; i < numcases; i++) {
+			int cases = Integer.parseInt(br.readLine());
+			for(int i =0; i < cases; i++) {
 				String line = br.readLine();
 				String [] datos = line.split(" ");
 				a = Integer.parseInt (datos[0]);
