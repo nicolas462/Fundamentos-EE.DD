@@ -1,7 +1,10 @@
 import java.io.*;
 
 /**
- * 
+ * Solución al problema 1 del taller.
+ * Se deben dividir los datos ingresados por consola, que estáran separados por comas. Estos datos
+ * se almacenarán en un vector de enteros para poder realizar la operación requerida
+ * y poder obtener una salida.
  */
 
 /**
@@ -10,19 +13,26 @@ import java.io.*;
  */
 public class Problema1 {
 	/**
-	 * @param args
+	 * 
+	 * @param arreglo = Arreglo que contiene la serie de números que se ingresarán por consola.
+	 * @param k = Resultado que se debe obtener para que sume el acumulador.
+	 * @return acumu = Se sumará uno cada vez que se cumpla la condición.
 	 */
-	public static int salida(int [] vector, int k) {
+	public static int salida(int [] arreglo, int k) 
+	{
 		int acum=0;
-		for (int i= 0; i<vector.length; i++) {
-			for(int j = 0; j<vector.length; j++) {
-				if (vector[i] - vector[j] == k)
+		for (int i= 0; i<arreglo.length; i++) {
+			for(int j = 0; j<arreglo.length; j++) {
+				if (arreglo[i] - arreglo[j] == k)
 					acum ++;
 			}
 		}
-		
 		return acum;
 	}
+	
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		try {
 			BufferedReader br = new BufferedReader (new InputStreamReader(System.in)); //Buffer para leer entradas.
@@ -37,11 +47,11 @@ public class Problema1 {
 			int k = Integer.parseInt(br.readLine()); //Se ingresa K.
 			
 			String [] datos = serie.split(",");
-			int [] vector = new int [datos.length]; //Acá se almacenarán los datos.
+			int [] arreglo = new int [datos.length]; //Acá se almacenarán los datos.
 			for (int i= 0; i<datos.length ; i++) //Se almacenan los datos del vector de strings, en uno de enteros.
-				vector [i] = Integer.parseInt(datos[i]);
+				arreglo [i] = Integer.parseInt(datos[i]);
 			
-			bw.write(""+salida(vector, k));
+			bw.write(""+salida(arreglo, k)); //Se imprime llamando a la función.
 			bw.flush();
 			
 		}
