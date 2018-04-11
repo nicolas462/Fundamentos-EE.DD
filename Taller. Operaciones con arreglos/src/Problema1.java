@@ -3,8 +3,7 @@ import java.io.*;
 /**
  * Solución al problema 1 del taller.
  * Se deben dividir los datos ingresados por consola, que estáran separados por comas. Estos datos
- * se almacenarán en un vector de enteros para poder realizar la operación requerida
- * y poder obtener una salida.
+ * se almacenarán en un vector de enteros para poder operarlos y poder obtener una salida.
  */
 
 /**
