@@ -3,7 +3,7 @@ import java.io.*;
  * Solución problema 2.
  * La base del ejercicio está en conocer la operación inversa a la multiplicación,
  * la división. De esta manera si se quiere eliminar la operación hecha por un número
- * en un índice 'x', se tiene que dividir el resultado de la multiplición de todos 
+ * de un índice 'x', se tiene que dividir el resultado de la multiplición de todos 
  * los números por 'x'.
  */
 
