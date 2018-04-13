@@ -4,6 +4,8 @@ import java.io.*;
  * Solución al problema 1 del taller.
  * Se deben dividir los datos ingresados por consola, que estáran separados por comas. Estos datos
  * se almacenarán en un vector de enteros para poder operarlos y poder obtener una salida.
+ * Se tomarán los datos y se operarán, si la diferencia de los datos es igual a 'k' se suma
+ * al acumulador, para al final mostar cuántas parejas cumplen con la condición.
  */
 
 /**
@@ -12,7 +14,7 @@ import java.io.*;
  */
 public class Problema1 {
 	/**
-	 * 
+	 * Retorna la cantidad de parejas que cumplen la condición, la cual es que el resultado de su diferencia sea 'k'.
 	 * @param arreglo = Arreglo que contiene la serie de números que se ingresarán por consola.
 	 * @param k = Resultado que se debe obtener para que sume el acumulador.
 	 * @return acumu = Se sumará uno cada vez que se cumpla la condición.
