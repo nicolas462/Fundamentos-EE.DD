@@ -12,7 +12,7 @@ import java.io.OutputStreamWriter;
  */
 
 /**
- * @author USER
+ * @author Nicolás David Espejo Bernal.
  *
  */
 public class Problema5 {
