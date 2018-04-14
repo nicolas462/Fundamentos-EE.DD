@@ -1,6 +1,8 @@
 import java.io.*;
 /**
- * 
+ * Se leen números separados por comas por consola. Posteriormente
+ * se imprime la serie de números ordenados de menor a mayor usando el 
+ * algoritmo de "Bubble Sort".
  */
 
 /**
