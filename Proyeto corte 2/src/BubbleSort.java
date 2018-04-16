@@ -73,8 +73,7 @@ public class BubbleSort {
 			bubbleSort(enteros); //Se llama la función para arreglar el vector.
 			bw.write("Arreglo ordenado : " + "\n");
 			bw.flush();
-			print (enteros); //Se imprime.
-			
+			print (enteros); //Se imprime.		
 		}
 		catch (Exception ex) {}
 	}
