@@ -41,20 +41,19 @@ public class MargeSort {
 	}
 	
 	public static int [] mergeSort (int [] a) {
-		int i=0;
 		int nleft = a.length /2; //Tamaño de la primera mitad del arreglo.
 		int nright = a.length  - nleft; //Tamaño de la otra mitad del arreglo.
 		//Se crean los dos arreglos del tamaño establecido anteriormente.
-		int right_sub_array [] = new int [nright];
 		int left_sub_array [] = new int [nleft];
+		int right_sub_array [] = new int [nright];	
 		if (a.length == 1) //Cuando el arreglo esté ordenado.
 			return a;
 		else {
 			//Llenar cada mitad del arreglo.
-			for (i =0; i<nleft; i++) 
+			for (int i =0; i<nleft; i++) 
 				left_sub_array[i] =  a[i];
-			for (i= nleft +1; i< a.length; i++)
-				left_sub_array [i - (nleft + 1)] = a[i];
+			for (int i= nleft +1; i< a.length; i++)
+				right_sub_array [i - (nleft + 1)] = a[i];
 			//Ordenar cada una de las partes
 			int [] sortedL = mergeSort (left_sub_array);
 			int [] sortedR = mergeSort (right_sub_array);
@@ -76,7 +75,7 @@ public class MargeSort {
 			}
 			else {
 				//Añadir elemento del arreglo 'b'.
-				c[indexC] = a[indexA];
+				c[indexC] = b[indexB];
 				indexB ++;
 				indexC ++;
 				
