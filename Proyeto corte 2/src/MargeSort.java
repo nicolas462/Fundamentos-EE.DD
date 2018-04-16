@@ -108,7 +108,6 @@ public class MargeSort {
 			int [] arreglo = llenar(line); //Se llama a la función para crear el arreglo de enteros.
 			int [] ordenado = mergeSort (arreglo);
 			print(ordenado);
-			
 		}
 		catch (Exception ex) {}
 
