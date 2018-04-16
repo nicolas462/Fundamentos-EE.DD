@@ -12,7 +12,7 @@ import java.io.OutputStreamWriter;
  *
  * 15/04/2018
  */
-public class MargeSort {
+public class MergeSort {
 	/**
 	 * Pasa la línea ingresada de números separados por comas, a un arreglo de enteros.
 	 * @param line = String con números separados por comas.
