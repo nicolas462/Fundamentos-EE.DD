@@ -79,6 +79,7 @@ public class MargeSort {
 				c[indexC] = a[indexA];
 				indexB ++;
 				indexC ++;
+				
 			}
 		}
 		// Uno del 'a' o 'b' tiene aún algunos elementos.
