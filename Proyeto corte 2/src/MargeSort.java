@@ -106,8 +106,8 @@ public class MargeSort {
 			bw.flush();
 			String line = br.readLine(); 
 			int [] arreglo = llenar(line); //Se llama a la función para crear el arreglo de enteros.
-			mergeSort (arreglo);
-			print(arreglo);
+			int [] ordenado = mergeSort (arreglo);
+			print(ordenado);
 		}
 		catch (Exception ex) {}
 
