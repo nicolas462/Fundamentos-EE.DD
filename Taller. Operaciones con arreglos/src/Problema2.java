@@ -32,8 +32,12 @@ public class Problema2 {
 	{
 		try {
 			BufferedWriter bw = new BufferedWriter (new OutputStreamWriter(System.out));
-			for (int i = 0; i< array.length; i++) 
+			for (int i = 0; i< array.length; i++) {
+				if (i == array.length -1)
+					bw.write( array[i]+ "\n" );
+				else
 					bw.write( array[i]+ "," );
+			}
 			bw.flush();
 		}
 		catch (Exception ex) {}

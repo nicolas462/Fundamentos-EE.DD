@@ -12,7 +12,7 @@ import java.io.OutputStreamWriter;
  *
  * 15/04/2018
  */
-public class MargeSort {
+public class MergeSort {
 	/**
 	 * Pasa la línea ingresada de números separados por comas, a un arreglo de enteros.
 	 * @param line = String con números separados por comas.
@@ -33,13 +33,21 @@ public class MargeSort {
 	public static void print (int [] array) {
 		try {
 			BufferedWriter bw = new BufferedWriter ( new OutputStreamWriter (System.out));
-			for (int i= 0; i<array.length; i++)
-				bw.write(array[i] + " ");
+			for (int i= 0; i<array.length; i++) {
+				if (i == array.length -1)
+					bw.write(array[i] + "\n");
+				else
+					bw.write(array[i] + " ");
+			}
 			bw.flush();
 		}
 		catch (Exception ex) {}
 	}
-	
+	/**
+	 * Algoritmo de ordenamiento Merge Sort recursivo.
+	 * @param a = Arreglo para ordenar.
+	 * @return = Arreglo ordenado.
+	 */
 	public static int [] mergeSort (int [] a) {
 		int nleft = a.length /2; //Tamaño de la primera mitad del arreglo.
 		int nright = a.length  - nleft; //Tamaño de la otra mitad del arreglo.
@@ -61,6 +69,12 @@ public class MargeSort {
 			return merge (sortedL, sortedR);		
 		}
 	}
+	/**
+	 * Organiza los números.
+	 * @param a = Mitad del arreglo.
+	 * @param b = Mitad faltante del arreglo.
+	 * @return = Arreglo ordenado.
+	 */
 	public static int [] merge (int[] a, int [] b) {
 		int l = a.length + b.length;
 		//Crear arreglo 'C'
@@ -107,6 +121,7 @@ public class MargeSort {
 			int [] arreglo = llenar(line); //Se llama a la función para crear el arreglo de enteros.
 			int [] ordenado = mergeSort (arreglo);
 			print(ordenado);
+			print(arreglo);
 			
 		}
 		catch (Exception ex) {}
