@@ -44,7 +44,7 @@ public class MergeSort {
 		catch (Exception ex) {}
 	}
 	/**
-	 * Algoritmo de ordenamiento Merge Sort recursivo.
+	 * Algoritmo de ordenamiento Merge Sort recursivo. Divide el arreglo hasta que esté en tamaño 1.
 	 * @param a = Arreglo para ordenar.
 	 * @return = Arreglo ordenado.
 	 */
@@ -60,17 +60,17 @@ public class MergeSort {
 			//Llenar cada mitad del arreglo.
 			for (int i =0; i<nleft; i++) 
 				left_sub_array[i] =  a[i];
-			for (int i= nleft +1; i< a.length; i++)
-				right_sub_array [i - (nleft + 1)] = a[i];
-			//Ordenar cada una de las partes
+			for (int i= nleft; i< a.length; i++)
+				right_sub_array [i - nleft] = a[i];
+			//Ordenar cada una de las partes.
 			int [] sortedL = mergeSort (left_sub_array);
 			int [] sortedR = mergeSort (right_sub_array);
-			// Estrategia divide y vencerás.
+			// Dividir arreglo.
 			return merge (sortedL, sortedR);		
 		}
 	}
 	/**
-	 * Organiza los números.
+	 * Ordena las soluciones.
 	 * @param a = Mitad del arreglo.
 	 * @param b = Mitad faltante del arreglo.
 	 * @return = Arreglo ordenado.
@@ -91,8 +91,7 @@ public class MergeSort {
 				//Añadir elemento del arreglo 'b'.
 				c[indexC] = b[indexB];
 				indexB ++;
-				indexC ++;
-				
+				indexC ++;	
 			}
 		}
 		// Uno del 'a' o 'b' tiene aún algunos elementos.
@@ -119,10 +118,10 @@ public class MergeSort {
 			bw.flush();
 			String line = br.readLine(); 
 			int [] arreglo = llenar(line); //Se llama a la función para crear el arreglo de enteros.
-			int [] ordenado = mergeSort (arreglo);
+			int [] ordenado = mergeSort (arreglo); //Se guarda el arreglo creado por el algoritmo.
+			bw.write("Arreglo ordenado : \n");
+			bw.flush();
 			print(ordenado);
-			print(arreglo);
-			
 		}
 		catch (Exception ex) {}
 
