@@ -1,6 +1,5 @@
-""" Buscar un valor en un arreglo con el algoritmo de 'Binary Search'"""
+""" Buscar un valor en un arreglo con el algoritmo de 'Interpolation Search'"""
 
-#Algoritmo sin recursión
 def interpolationSearch(a, x):
 	lowerBound = 0
 	upperBound = len (a) -1
@@ -12,7 +11,7 @@ def interpolationSearch(a, x):
 	while lowerBound < upperBound:
 		middlePoint = int (lowerBound + (part1 / part2) * part3)
 		if x == a[middlePoint]:
-			#EL valor ha sido encontrado. 
+			#El valor ha sido encontrado. 
 			index = middlePoint
 			break
 		elif x < a[middlePoint]:
@@ -29,7 +28,7 @@ a = input()
 print ("Ingrese número a buscar: ")
 x = input()
 list = a.split(",") #Se dividen los valores por comas y se guardan en una lista.
-indice = interpolationSearch(list, x) #Se guarda el valor de la función sin recursión.
+indice = interpolationSearch(list, x) #Se guarda el valor de la función.
 if (indice >= 0):
 	print ("El número está en el índice: ", indice, "\n")
 else:
