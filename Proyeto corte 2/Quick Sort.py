@@ -28,3 +28,26 @@ a = input()
 list = a.split(",") #Se dividen los valores por comas y se guardan en una lista.
 quickSort(list) #Se llama a la función
 print ("Arreglo ordenado :", quickSort(list) )
+
+"""def quickSort (A):
+	if len (A) == 1:
+		return A
+	else:
+		greater_subarray =[]
+		less_subarray = []
+		array = []
+		pivot = A[0]
+		for i in range (1, len(A)):
+			if A[i] < pivot:
+				less_subarray.append(A[i])
+			else:
+				greater_subarray.append(A[i])
+				aux = []
+				aux.append(quickSort(less_subarray), pivot, quickSort(greater_subarray))
+			return aux
+
+lista = [8,9,10,4,1,2]
+enteros = []
+for i in range (0, len(lista)):
+	enteros.append(int (lista[i]))
+print (quickSort(enteros))"""
