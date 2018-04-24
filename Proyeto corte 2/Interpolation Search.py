@@ -15,7 +15,7 @@ def interpolationSearch (A, x):
 			upperBound = middlePoint -1
 		else:
 			lowerBound = middlePoint + 1
-	if lowerBound == upperBound and a[lowerBound] == x:
+	if lowerBound == upperBound and A[lowerBound] == x:
 		index = lowerBound
 	return index
 
