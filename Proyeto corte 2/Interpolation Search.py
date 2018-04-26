@@ -3,10 +3,9 @@ def interpolationSearch (A, x):
 	lowerBound = 0
 	upperBound = len (A) -1
 	index = -1
-	part1 = int (lowerBound + (upperBound - lowerBound)/ (A[upperBound] - A[lowerBound]))
 	#Si el límite superior es menor que el inferior, no hay una solución factible. 
 	while lowerBound < upperBound:
-		middlePoint = part1 * (x - A[lowerBound])
+		middlePoint = lowerBound + ((upperBound-lowerBound)//(A[upperBound] - A[lowerBound])) * (x - A[lowerBound])
 		if x == A [middlePoint]:
 			#El valor ha sido encontrado. 
 			index = middlePoint
