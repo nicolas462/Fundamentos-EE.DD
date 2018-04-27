@@ -1,6 +1,6 @@
 import java.io.*;
  
-public class Clase1 {
+public class Birthday_Party {
 	public static void main(String[] args) {
 		try {
 			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter (System.out));
