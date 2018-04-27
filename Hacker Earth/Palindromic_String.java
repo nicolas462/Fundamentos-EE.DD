@@ -11,7 +11,7 @@ public class Palindromic_String {
 		try {
 			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter (System.out));
 			BufferedReader br = new BufferedReader(new InputStreamReader (System.in));
-			Clase1 prueba = new Clase1();//Llamar función.
+			Palindromic_String prueba = new Palindromic_String();//Llamar función.
 			String s = br.readLine();
 			if (prueba.palindromo(s).equals(s)) 
 				bw.write("YES");
