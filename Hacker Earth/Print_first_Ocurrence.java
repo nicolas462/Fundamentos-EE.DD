@@ -2,7 +2,7 @@ import java.io.*;
  
 // Warning: Printing unwanted or ill-formatted data to output will cause the test cases to fail
  
-class TestClass {
+class Print_first_Ocurrence {
     public static String ocurrence (String line) {
     	String occ = ""; 
         int contador =0;
