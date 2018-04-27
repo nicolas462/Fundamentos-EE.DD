@@ -1,6 +1,6 @@
 import java.io.*;
 
-class TestClass {
+class Anagrams {
     public static int ana (String a, String b){
         int contador = 0;
         for (int i =0; i< a.length(); i++){
