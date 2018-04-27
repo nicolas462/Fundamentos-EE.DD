@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class TestClass {
+public class DNA_Pride {
     public static String output (String line){
     	String aux2 = ""; 
         for (int i= 0; i< line.length(); i++){
