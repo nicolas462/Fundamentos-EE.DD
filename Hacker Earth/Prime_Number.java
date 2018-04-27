@@ -1,5 +1,5 @@
 import java.io.*;
-public class Clase1 {
+public class Prime_Number {
 
 	public static void main(String[] args) {
 		try {
@@ -18,8 +18,7 @@ public class Clase1 {
 			{
 				bw.write(i+ " ");
 			}
-			contador = 0;
-			
+			contador = 0;	
 		}
 		bw.flush();
 		}
