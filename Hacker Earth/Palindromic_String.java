@@ -1,14 +1,11 @@
 import java.io.*;
-public class Clase1 {
+public class Palindromic_String {
 	public String palindromo(String s) //Revierte String
 	{
-		if (s.length()==1) {
+		if (s.length()==1) 
 			return s;
-		}
-		else {
-			return palindromo (s.substring(1, s.length())) + s.charAt(0) ;
-		}
-		
+		else
+			return palindromo (s.substring(1, s.length())) + s.charAt(0);	
 	}
 	public static void main(String[] args) {
 		try {
@@ -17,19 +14,11 @@ public class Clase1 {
 			Clase1 prueba = new Clase1();//Llamar función.
 			String s = br.readLine();
 			if (prueba.palindromo(s).equals(s)) 
-			{
 				bw.write("YES");
-			}
-			else {
+			else 
 				bw.write("NO");
-			}
 			bw.flush();
-			
-			
-		
 		}
 		catch (Exception ex ) {}
- 
 	}
- 
 }
