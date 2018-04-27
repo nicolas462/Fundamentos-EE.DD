@@ -1,6 +1,6 @@
 import java.io.*;
  
-public class Clase1 {
+public class Capicua {
 	public String capicua(String numero) {
 		if (numero.length()==1) {
 		return numero;
