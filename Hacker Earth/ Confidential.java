@@ -1,17 +1,15 @@
 import java.io.*;
 
-public class TestClass {
+public class Confidential {
 	public static String message (String line) {
 		int middle = line.length() / 2;
-		String left = line.substring(0, middle);
-		String right = line.substring(middle);
 		if (line.length() == 1) 
 			return line;
 		else {
-			return line.charAt(middle) + message(left) + message(right);
-			
-		}
-			
+			String left = line.substring(0, middle);
+			String right = line.substring(middle);
+			return line.charAt(middle) + message(left) + message(right);	
+		}		
 	}
     
 	public static void main(String[] args) {
