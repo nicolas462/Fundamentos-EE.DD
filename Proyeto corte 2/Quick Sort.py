@@ -26,8 +26,13 @@ def quickSort(a):
 print ("Ingrese números: ")
 a = input()
 list = a.split(",") #Se dividen los valores por comas y se guardan en una lista.
-quickSort(list) #Se llama a la función
-print ("Arreglo ordenado :", quickSort(list) )
+
+enteros = [] #Se guardarán enteros
+for i in range(0, len(list)): #Pasar str a int
+    enteros.append(int (list[i]))
+    
+quickSort(enteros) #Se llama a la función
+print ("Arreglo ordenado :", quickSort(enteros))
 
 """def quickSort (A):
 	if len (A) == 1:
