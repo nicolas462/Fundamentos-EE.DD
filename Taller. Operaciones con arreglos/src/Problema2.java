@@ -1,23 +1,23 @@
 import java.io.*;
 /**
- * Solución problema 2.
- * La base del ejercicio está en conocer la operación inversa a la multiplicación,
- * la división. De esta manera si se quiere eliminar la operación hecha por un número
- * de un índice 'x', se tiene que dividir el resultado de la multiplición de todos 
- * los números por 'x'.
+ * SoluciÃ³n problema 2.
+ * La base del ejercicio estÃ¡ en conocer la operaciÃ³n inversa a la multiplicaciÃ³n,
+ * la divisiÃ³n. De esta manera si se quiere eliminar la operaciÃ³n hecha por un nÃºmero
+ * de un Ã­ndice 'x', se tiene que dividir el resultado de la multipliciÃ³n de todos 
+ * los nÃºmeros por 'x'.
  */
 
 /**
- * @author Nicolás David Espejo Bernal
+ * @author NicolÃ¡s David Espejo Bernal
  *
  */
 public class Problema2 {
 	/**
 	 * 
-	 * @param array = Arreglo que se usará.
-	 * @return = Retorna la multiplicación de todos los números dentro del arreglo.
+	 * @param array = Arreglo que se usarÃ¡.
+	 * @return = Retorna la multiplicaciÃ³n de todos los nÃºmeros dentro del arreglo.
 	 */
-	public static int mult (int array[]) //Resultado de multiplicación.
+	public static int mult (int array[]) //Resultado de multiplicaciÃ³n.
 	{
 		int acum = 1;
 		for (int i= 0; i<array.length; i++)
@@ -26,7 +26,7 @@ public class Problema2 {
 	}
 	/**
 	 * 
-	 * @param array = Arreglo que se usará para imprimirlo.
+	 * @param array = Arreglo que se usarÃ¡ para imprimirlo.
 	 */
 	public static void print (int array[]) //Imprime arreglos.
 	{
@@ -51,13 +51,13 @@ public class Problema2 {
 			BufferedReader br = new BufferedReader (new InputStreamReader (System.in));
 			String n = br.readLine(); //Se lee la entrada.
 			String [] datos = n.split(","); //Se almacenan los datos de entrada en un arraglo de Strings.
-			int [] valores = new int [datos.length]; //Se crea un arreglo igual al tamaño del arreglo de Strings.
+			int [] valores = new int [datos.length]; //Se crea un arreglo igual al tamaÃ±o del arreglo de Strings.
 			for (int i= 0; i<datos.length; i++)//Se pasa el vector de Strings a vector de enteros.
 				valores[i] = Integer.parseInt(datos[i]);
 			
-			int mult = mult(valores); //Se almacena el resultado de la función dentro de un entero para posteriormente usarlo.
+			int mult = mult(valores); //Se almacena el resultado de la funciÃ³n dentro de un entero para posteriormente usarlo.
 			int [] salida = new int [valores.length]; //Se crea el arreglo de salida.
-			for (int j=0 ; j<salida.length; j++) //Se realiza la inversa de la multiplicación.
+			for (int j=0 ; j<salida.length; j++) //Se realiza la inversa de la multiplicaciÃ³n.
 				salida[j] = mult/valores[j];
 			
 			print(salida);
