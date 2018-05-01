@@ -75,6 +75,7 @@ public class Problema5 {
 			int [] valores = arreglo(datos); //Se llama a la función para crear el arreglo de enteros.	
 			bw.write("Respuesta: "+ patr (valores)); //1, 5, 7, 9 //RTA: 3
 			bw.flush();	
+			
 		}
 		catch(Exception ex) {}
 
