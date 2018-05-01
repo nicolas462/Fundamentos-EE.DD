@@ -17,5 +17,9 @@ def insertionSort (a):
 print ("Ingrese números: ")
 a = input()
 list = a.split(",") #Se dividen los valores por comas y se guardan en una lista.
-insertionSort(list); #Se llama a la función
-print ("Arreglo ordenado :", list )
+enteros = [] #Se guardarán enteros
+for i in range(0, len(list)): #Pasar str a int
+	enteros.append(int (list[i]))
+	
+insertionSort(enteros) #Se llama a la función
+print ("Arreglo ordenado :", enteros )

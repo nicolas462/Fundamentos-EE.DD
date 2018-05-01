@@ -24,8 +24,10 @@ public class Problema1 {
 		int acum=0;
 		for (int i= 0; i<arreglo.length; i++) {
 			for(int j = 0; j<arreglo.length; j++) {
-				if (arreglo[i] - arreglo[j] == k)
+				if (arreglo[i] - arreglo[j] == k) {
 					acum ++;
+					
+				}
 			}
 		}
 		return acum;
