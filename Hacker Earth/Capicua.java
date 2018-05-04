@@ -13,7 +13,7 @@ public class Capicua {
 		try {
 			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter (System.out));
 			BufferedReader br = new BufferedReader(new InputStreamReader (System.in));
-			Clase1 capic = new Clase1();
+			Capicua capic = new Capicua();
 			int cases= Integer.parseInt(br.readLine());
 			String n;
 			for (int i=0; i<cases; i++) {
