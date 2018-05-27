@@ -2,7 +2,7 @@ import processing.core.PApplet;
 
 public class Fractal extends PApplet {
 
-	int [] rule = {0,1,1,1,0,1,1,0};
+	int [] rule = {1,1,1,1,0,1,1,0};
 	
 	public void settings () {
 		size(600,600); //Tamaño de pantalla
