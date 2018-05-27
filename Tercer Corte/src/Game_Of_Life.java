@@ -61,7 +61,7 @@ byte [][] board = null;
 		}
 		return counter;
 		/*
-		  board [i -1] [j - 1] 
+		  board [i -1] [j - 1]
 		  board [i -1] [j]
 		  board [i -1] [j + 1]
 		  
