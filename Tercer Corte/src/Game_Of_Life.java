@@ -18,7 +18,7 @@ byte [][] board = null;
 	public int countNeighbours(int i, int j) {
 		int counter = 0;
 		
-		if (i == 0) //First ro
+		if (i == 0) //First row
 		{
 			if (j == 0) //First column
 			{
