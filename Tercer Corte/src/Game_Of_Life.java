@@ -1,3 +1,5 @@
+import processing.core.PApplet;
+
 /**
  * 
  */
@@ -7,9 +9,17 @@
  *
  * 22/05/2018
  */
-public class Game_Of_Life {
+public class Game_Of_Life extends PApplet{
 	
 byte [][] board = null;
+	
+	public void settings() {
+		size(600,600);
+	}
+	public void draw() {
+		int [][] matriz = new int [150][150];
+		background(0);	
+	}
 	
 	public Game_Of_Life(int rows, int columns) {
 		board = new byte [rows][columns];
@@ -89,7 +99,8 @@ byte [][] board = null;
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		String [] appletArgs = new String[] {"Game_Of_Life"};
+		PApplet.main(appletArgs);
 	}
 
 }
