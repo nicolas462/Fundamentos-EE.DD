@@ -2,7 +2,7 @@ import processing.core.PApplet;
 
 public class Fractal extends PApplet {
 
-	int [] rule = {1,1,1,1,0,1,1,0};
+	int [] rule = {0,1,0,0,1,0,1,0};
 	
 	public void settings () {
 		size(600,600); //Tamaño de pantalla
@@ -22,7 +22,7 @@ public class Fractal extends PApplet {
 		for (int i = 1; i < 150 ; i++)
 			for (int j = 0; j < 150; j++)
 			{
-				int index = (matrix [i - 1 ][(j - 1 + 150) % 150] * 4) + (matrix[i - 1][j] * 2) + (matrix[i - 1][(j + 1) % 150] * 4);
+				int index = (matrix [i - 1 ][(j - 1 + 150) % 150] * 4) + (matrix[i - 1][j] * 2) + (matrix[i - 1][(j + 1) % 150]);
 				matrix[i][j] = rule[index];
 			}
 		
@@ -37,7 +37,7 @@ public class Fractal extends PApplet {
 				rect(j * size, i* size, size, size);
 			}
 		try {
-			Thread.sleep(100);
+			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
