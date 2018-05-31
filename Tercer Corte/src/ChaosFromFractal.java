@@ -97,7 +97,7 @@ public class ChaosFromFractal {
 		for(int i = 1; i < rows; i++)
 			for(int j = 0; j < columns; j++)
 			{
-				first_iteration();
+				
 			}
 		
 	}

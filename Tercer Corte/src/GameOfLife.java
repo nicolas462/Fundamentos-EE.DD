@@ -95,7 +95,13 @@ public class GameOfLife {
 		for(int i = 0; i < rows; i++)
 			for(int j = 0; j < columns; j++)
 			{
-				
+				if (this.board [i][j] ==0)
+					if (countNeighborsToroidal(i, j) == 3) 
+						next_generation[i][j] = 1;
+				else if (countNeighborsToroidal(i, j)==2 || countNeighborsToroidal(i, j)==3)
+					next_generation[i][j]=1;
+				else
+					next_generation[i][j]=0;
 			}
 		
 		board = next_generation.clone();
