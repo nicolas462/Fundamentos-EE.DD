@@ -31,9 +31,9 @@ public class GameOfLife {
 		int height = board.length; //Rows
 		
 		return  board [(i -1 + height) % height] [(j - 1 + width) %width] +board [(i -1 + height) % height] [j] 
-				+board [(i -1 + height) % height] [(j + 1) %width] + board [i] [j - 1+ width]+ board [i] [(j + 1)%width] 
-				+ board [(i + 1)  % height] [j - 1 + width] %width	+ board [(i + 1) % height] [j] 
-						+ board [(i + 1) % height] [(j + 1)%width];
+				+board [(i -1 + height) % height] [(j + 1) %width] + board [i] [(j - 1+ width)  %width]+ board [i] [(j + 1)%width] 
+				+ board [(i + 1)  % height] [(j - 1 + width) %width]	+ board [(i + 1) % height] [j] 
+						+ board [(i + 1) % height] [(j + 1) %width];
 	}	
 	
 	
