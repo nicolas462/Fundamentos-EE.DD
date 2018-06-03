@@ -41,46 +41,50 @@ public class GameOfLife {
 	{
 		int counter = 0;
 		
-		if (i == 0) //First row
+		if (i == 0 || i == board.length - 1) //Either first row or last row
 		{
-			if (j == 0) //First column
+			if (i == 0) //First row
 			{
-			counter =  board [i] [j + 1]+ board [i + 1] [j] + board [i + 1] [j + 1];
-			}
-			else
-			{
-				if (j == board[i].length - 1)
-				{
-					counter = board [i] [j - 1] + board [i + 1] [j - 1] +  board [i + 1] [j];
-				}
+				if (j == 0) //First column
+					counter =  board [i] [j + 1]+ board [i + 1] [j] + board [i + 1] [j + 1];	
 				else
 				{
-					counter = board [i -1] [j - 1] +board [i -1] [j]+ board [i -1] [j + 1]+ board [i] [j - 1]
-									  +board [i] [j + 1];
+					if (j == board[i].length - 1)
+						counter = board [i] [j - 1] + board [i + 1] [j - 1] +  board [i + 1] [j];
+					else
+						counter = board [i + 1] [j - 1] +board [i + 1] [j]+ board [i + 1] [j + 1]+ board [i] [j - 1]
+								+board [i] [j + 1];
+				}
+			}
+			if(i == board.length -1) // Last row
+			{
+				if (j == 0) //First column
+					counter = board [i - 1][j] + board [i - 1][j + 1];
+				else
+				{
+					if (j == board[i].length - 1)
+					counter = board [i - 1][j] + board [i - 1][j - 1] + board [i][j - 1];
+					else
+						counter = board [i][j - 1] + board [i - 1][j - 1] + board [i - 1][j] + board [i - 1][j + 1]
+							+ board [i][j + 1];
 				}
 			}
 		}
 		else
 		{
-				if (j == 0) //First column
-				{
-				counter =  board [i - 1] [j]+ board [i - 1] [j + 1] + board [i] [j + 1]
-						+ board [i + 1] [j] + board [i + 1] [j + 1];
-				}
+			if (j == 0 && i != board.length - 1) //First column
+			counter =  board [i - 1] [j]+ board [i - 1] [j + 1] + board [i] [j + 1]
+					+ board [i + 1] [j] + board [i + 1] [j + 1];
+			else
+			{
+				if (j == board[i].length - 1) // Last column
+					counter = board [i - 1] [j - 1] + board [i - 1] [j] +  board [i] [j - 1]
+							+ board [i + 1] [j - 1] + board [i + 1] [j];
 				else
-				{
-					if (j == board[i].length - 1) // Last column
-					{
-						counter = board [i - 1] [j - 1] + board [i - 1] [j] +  board [i] [j - 1]
-								+ board [i + 1] [j - 1] + board [i + 1] [j];
-					}
-					else
-					{
-						counter = board [i -1] [j - 1] +board [i -1] [j] +board [i -1] [j + 1] 
-								+  board [i] [j - 1]+ board [i] [j + 1] + board [i + 1] [j - 1]
-									+ board [i + 1] [j] + board [i + 1] [j + 1];
-					}
-				}
+					counter = board [i -1] [j - 1] +board [i -1] [j] +board [i -1] [j + 1] 
+							+  board [i] [j - 1]+ board [i] [j + 1] + board [i + 1] [j - 1]
+								+ board [i + 1] [j] + board [i + 1] [j + 1];
+			}
 		}
 		return counter;
 	}
@@ -90,20 +94,44 @@ public class GameOfLife {
 	public void iterations()
 	{
 		int[][] next_generation = this.board.clone();
-		int counter;
-		
+		//With toroidal.
+		///*
 		for(int i = 0; i < rows; i++)
 			for(int j = 0; j < columns; j++)
 			{
-				if (this.board [i][j] ==0)
+				if (this.board [i][j] ==0) { 
 					if (countNeighborsToroidal(i, j) == 3) 
 						next_generation[i][j] = 1;
-				else if (countNeighborsToroidal(i, j)==2 || countNeighborsToroidal(i, j)==3)
-					next_generation[i][j]=1;
-				else
-					next_generation[i][j]=0;
+				}
+				else {
+					if(countNeighborsToroidal(i, j) <=1)
+						next_generation[i][j] = 0;
+					if(countNeighborsToroidal(i, j) >=4)
+						next_generation[i][j] = 0;
+					if(countNeighborsToroidal(i, j) ==2 || countNeighborsToroidal(i, j) == 3)
+						next_generation[i][j] = 1;
+				}
 			}
-		
+			//*/
+		//Without toroidal.
+		/*
+		for(int i = 0; i < rows; i++)
+			for(int j = 0; j < columns; j++)
+			{
+				if (this.board [i][j] ==0) { 
+					if (countNeighbors(i, j) == 3) 
+						next_generation[i][j] = 1;
+				}
+				else {
+					if(countNeighbors(i, j) <=1)
+						next_generation[i][j] = 0;
+					if(countNeighbors(i, j) >=4)
+						next_generation[i][j] = 0;
+					if(countNeighbors(i, j) ==2 || countNeighbors(i, j) == 3)
+						next_generation[i][j] = 1;
+				}
+			}
+		*/
 		board = next_generation.clone();
 	}
 }
