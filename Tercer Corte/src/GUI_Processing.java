@@ -23,7 +23,7 @@ public class GUI_Processing extends PApplet {
 	/*
 	 * 
 	 */
-	public int width = 900, height = 600, size = 10, rule = 90;
+	public int width = 900, height = 600, size = 3, rule = 90;
 	public int rows = height / size, columns = width / size;
 	ChaosFromFractal chaos = new ChaosFromFractal(rule, rows, columns);
 	GameOfLife life = new GameOfLife(rows, columns, 0.08);
@@ -78,7 +78,7 @@ public class GUI_Processing extends PApplet {
 		
 		try
 		{
-			Thread.sleep(100);
+			Thread.sleep(10);
 		}
 		catch(Exception ex) {}
 	}

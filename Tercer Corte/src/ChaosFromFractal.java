@@ -92,20 +92,17 @@ public class ChaosFromFractal {
 	 */
 	public void iterations()
 	{
-		int index = -1;
+		// Se copia la misma matriz al índece de abajo
+		for(int i = 0; i < rows - 1; i++)
+			for(int j = 0; j < columns; j++)
+				matrix[i][j] = matrix[i + 1][j];
 		
-		for(int i = 0; i < rows; i++)
+		int index;
+		for(int i = 1; i < rows; i++)
 			for(int j = 0; j < columns; j++)
 			{
-				index = (matrix[(i - 1 + rows) % rows][(j - 1 + columns) % columns] * 4) + (matrix[(i - 1 + rows) % rows][j] * 2) + (matrix[(i - 1 + rows) % rows][(j + 1) % columns] * 1);
-				matrix[i][j] = chaos_rule[index];
+				index = (matrix[rows - 2][(j - 1 + columns) % columns] * 4) + (matrix[rows - 2][j] * 2) + (matrix[rows - 2][(j + 1) % columns] * 1);
+				matrix[rows - 1][j] = chaos_rule[index];
 			}
-	
-			/*for(int j= 0; j< columns; j++) {
-				index = (matrix[(rows-1) - 1][(j - 1 + columns) % columns] * 4) + (matrix[(rows-1) - 1][j] * 2) + (matrix[(rows-1) - 1][(j + 1) % columns] * 1);
-				matrix[rows-1][j] = chaos_rule[index];*/
-
-				
-		
 	}
 }
