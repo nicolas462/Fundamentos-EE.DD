@@ -46,7 +46,7 @@ public class GUI_Processing extends PApplet {
 		stroke(20);
 		
 		//For chaos 
-		/*for(int i = 0; i < rows; i++)
+		for(int i = 0; i < rows; i++)
 			for(int j = 0; j < columns; j++)
 			{
 				if(chaos.matrix[i][j] == 0)
@@ -57,11 +57,11 @@ public class GUI_Processing extends PApplet {
 				rect(j * size, i * size, size, size);
 			}
 				
-		chaos.iterations();*/
-		 
+		chaos.iterations();
+		
 		
 		//For Game of Life
-		for(int i = 0; i < rows; i++)
+		/*for(int i = 0; i < rows; i++)
 		{
 			for(int j = 0; j < columns; j++)
 			{
@@ -74,11 +74,11 @@ public class GUI_Processing extends PApplet {
 			}
 		}
 		
-		life.iterations();
+		life.iterations();*/
 		
 		try
 		{
-			Thread.sleep(100);
+			Thread.sleep(10000);
 		}
 		catch(Exception ex) {}
 	}

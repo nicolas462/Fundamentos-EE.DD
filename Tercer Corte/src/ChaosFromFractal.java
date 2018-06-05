@@ -26,7 +26,7 @@ public class ChaosFromFractal {
 	int rows, columns;
 	
 	/**
-	 * 
+	 * Constructor.
 	 * @param number
 	 * @param rows
 	 * @param columns
@@ -92,13 +92,20 @@ public class ChaosFromFractal {
 	 */
 	public void iterations()
 	{
-		int index = 1;
+		int index = -1;
 		
-		for(int i = 1; i < rows; i++)
+		for(int i = 0; i < rows; i++)
 			for(int j = 0; j < columns; j++)
 			{
-				
+				index = (matrix[(i - 1 + rows) % rows][(j - 1 + columns) % columns] * 4) + (matrix[(i - 1 + rows) % rows][j] * 2) + (matrix[(i - 1 + rows) % rows][(j + 1) % columns] * 1);
+				matrix[i][j] = chaos_rule[index];
 			}
+	
+			/*for(int j= 0; j< columns; j++) {
+				index = (matrix[(rows-1) - 1][(j - 1 + columns) % columns] * 4) + (matrix[(rows-1) - 1][j] * 2) + (matrix[(rows-1) - 1][(j + 1) % columns] * 1);
+				matrix[rows-1][j] = chaos_rule[index];*/
+
+				
 		
 	}
 }
