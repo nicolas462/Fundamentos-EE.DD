@@ -92,7 +92,7 @@ public class ChaosFromFractal {
 	 */
 	public void iterations()
 	{
-		// Se copia la misma matriz al índece de abajo
+		// Se copia la misma columna a la columna de abajo
 		for(int i = 0; i < rows - 1; i++)
 			for(int j = 0; j < columns; j++)
 				matrix[i][j] = matrix[i + 1][j];
