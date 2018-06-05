@@ -78,7 +78,7 @@ public class GUI_Processing extends PApplet {
 		
 		try
 		{
-			Thread.sleep(10);
+			Thread.sleep(100);
 		}
 		catch(Exception ex) {}
 	}

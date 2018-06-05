@@ -97,6 +97,7 @@ public class ChaosFromFractal {
 			for(int j = 0; j < columns; j++)
 				matrix[i][j] = matrix[i + 1][j];
 		
+		// El índice se obtiene de la penúltima fila, posteriormente, se copia a la siguiente
 		int index;
 		for(int i = 1; i < rows; i++)
 			for(int j = 0; j < columns; j++)
