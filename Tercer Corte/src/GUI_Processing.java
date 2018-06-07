@@ -23,10 +23,12 @@ public class GUI_Processing extends PApplet {
 	/*
 	 * 
 	 */
-	public int width = 900, height = 600, size = 3, rule = 90;
+	public int width = 900, height = 600, size = 100;
 	public int rows = height / size, columns = width / size;
-	ChaosFromFractal chaos = new ChaosFromFractal(rule, rows, columns);
+	ChaosFromFractal chaos = new ChaosFromFractal(90, rows, columns);
 	GameOfLife life = new GameOfLife(rows, columns, 0.08);
+	Minesweeper minas = new Minesweeper(rows, columns, 9); // Rows - Columns - numBombs
+	int x, y;
 	
 	/**
 	 * 
@@ -46,7 +48,7 @@ public class GUI_Processing extends PApplet {
 		stroke(20);
 		
 		//For chaos 
-		for(int i = 0; i < rows; i++)
+		/*for(int i = 0; i < rows; i++)
 			for(int j = 0; j < columns; j++)
 			{
 				if(chaos.matrix[i][j] == 0)
@@ -57,7 +59,7 @@ public class GUI_Processing extends PApplet {
 				rect(j * size, i * size, size, size);
 			}
 				
-		chaos.iterations();
+		chaos.iterations();*/
 		
 		
 		//For Game of Life
@@ -76,6 +78,38 @@ public class GUI_Processing extends PApplet {
 		
 		life.iterations();*/
 		
+		// Buscaminas
+		for(int i = 0; i < rows; i++)
+		{
+			for(int j = 0; j < columns; j++)
+			{
+				
+				if(minas.matrix[i][j] == 0 ) 
+				{
+					fill(255);
+					if(minas.label[i][j] == -1)		// Dibujar celdas ya seleccionadas
+						fill(186, 186, 186);
+					if(minas.label[i][j] == -3)
+						fill(255,0,0);
+				}
+				else		//Dibujar minas
+					fill(minas.r,minas.g,minas.b);
+				
+				rect(j * size, i * size, size, size);
+				
+				// Dibujar número de bombas adyacentes
+				fill(100, 30, 30);
+				if(minas.label[i][j] > 0)		// Imprime los valores de los vecinos
+					text(minas.label[i][j], (j * size) + size/2, (i * size) + size/2);
+				
+				// Dibujar bandera
+				fill(100, 30, 30);
+				if(minas.label[i][j] == -2)		
+					text("X", (j * size) + size/2, (i * size) + size/2);		
+			}
+		}
+		
+		
 		try
 		{
 			Thread.sleep(100);
@@ -83,6 +117,31 @@ public class GUI_Processing extends PApplet {
 		catch(Exception ex) {}
 	}
 	
+	/**
+	 * Evento, mouse click para buscaminas
+	 */
+	public void mousePressed()
+	{
+		this.x = mouseX/size;
+		this.y = mouseY/size;
+		if(mouseButton == LEFT) 
+		{
+			if(minas.matrix[y][x] == 1)		// Si selecciona una mina se muestran las demás
+			{
+				minas.colorRed();
+			}
+			if(minas.matrix[y][x] == 0)
+				minas.setLabel(x, y);
+			if(minas.countNeighbors(y, x) == 0)
+				minas.label[y][x] = minas.visible;
+		}
+		if(mouseButton == RIGHT) 
+		{
+			// Si no está visible y no muestra vecinos
+			if(minas.label[y][x] == 0) 
+				minas.label[y][x] = minas.flagged;
+		}
+	}
 	
 	/**
 	 * 
