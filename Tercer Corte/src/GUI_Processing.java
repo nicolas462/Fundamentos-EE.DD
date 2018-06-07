@@ -23,12 +23,14 @@ public class GUI_Processing extends PApplet {
 	/*
 	 * 
 	 */
-	public int width = 900, height = 600, size = 100;
+	public int width = 600, height = 600, size = 100;
 	public int rows = height / size, columns = width / size;
 	ChaosFromFractal chaos = new ChaosFromFractal(90, rows, columns);
 	GameOfLife life = new GameOfLife(rows, columns, 0.08);
-	Minesweeper minas = new Minesweeper(rows, columns, 9); // Rows - Columns - numBombs
-	int x, y;
+	int x, y, counter =0, bombs = 9;
+	boolean inGame = true;
+	Minesweeper minas = new Minesweeper(rows, columns, bombs); // Rows - Columns - numBombs
+	
 	
 	/**
 	 * 
@@ -79,36 +81,44 @@ public class GUI_Processing extends PApplet {
 		life.iterations();*/
 		
 		// Buscaminas
-		for(int i = 0; i < rows; i++)
+		if(inGame == true)
 		{
-			for(int j = 0; j < columns; j++)
+			for(int i = 0; i < rows; i++)
 			{
-				
-				if(minas.matrix[i][j] == 0 ) 
+				for(int j = 0; j < columns; j++)
 				{
-					fill(255);
-					if(minas.label[i][j] == -1)		// Dibujar celdas ya seleccionadas
-						fill(186, 186, 186);
-					if(minas.label[i][j] == -3)
-						fill(255,0,0);
+					
+					if(minas.matrix[i][j] == 0 ) 
+					{
+						fill(255);
+						if(minas.label[i][j] == -1)		// Dibujar celdas ya seleccionadas
+							fill(186, 186, 186);
+						if(minas.label[i][j] == -3)
+							fill(255,0,0);
+					}
+					else		//Dibujar minas
+						fill(minas.r,minas.g,minas.b);
+					
+					rect(j * size, i * size, size, size);
+					
+					// Dibujar número de bombas adyacentes
+					fill(100, 30, 30);
+					if(minas.label[i][j] > 0)		// Imprime los valores de los vecinos
+						text(minas.label[i][j], (j * size) + size/2, (i * size) + size/2);
+					
+					// Dibujar bandera
+					fill(100, 30, 30);
+					if(minas.label[i][j] == -2)		
+						text("X", (j * size) + size/2, (i * size) + size/2);		
 				}
-				else		//Dibujar minas
-					fill(minas.r,minas.g,minas.b);
-				
-				rect(j * size, i * size, size, size);
-				
-				// Dibujar número de bombas adyacentes
-				fill(100, 30, 30);
-				if(minas.label[i][j] > 0)		// Imprime los valores de los vecinos
-					text(minas.label[i][j], (j * size) + size/2, (i * size) + size/2);
-				
-				// Dibujar bandera
-				fill(100, 30, 30);
-				if(minas.label[i][j] == -2)		
-					text("X", (j * size) + size/2, (i * size) + size/2);		
 			}
 		}
-		
+		else
+		{
+			fill(0, 255, 0);
+			textSize(64);
+			text("You won!", 100, 100);
+		}
 		
 		try
 		{
@@ -127,19 +137,25 @@ public class GUI_Processing extends PApplet {
 		if(mouseButton == LEFT) 
 		{
 			if(minas.matrix[y][x] == 1)		// Si selecciona una mina se muestran las demás
-			{
 				minas.colorRed();
-			}
-			if(minas.matrix[y][x] == 0)
+			
+			if(minas.matrix[y][x] == 0)		// Muestra las minas adyacentes
 				minas.setLabel(x, y);
-			if(minas.countNeighbors(y, x) == 0)
+			
+			if(minas.countNeighbors(y, x) == 0)		// Si no hay celdas alrededor celda = visible
 				minas.label[y][x] = minas.visible;
 		}
 		if(mouseButton == RIGHT) 
 		{
-			// Si no está visible y no muestra vecinos
-			if(minas.label[y][x] == 0) 
+			if(minas.matrix[y][x] == 1) 
+				if(minas.label[y][x] != -2) 		// Si la mina no está marcada ya
+					counter += 1;
+			
+			if(minas.label[y][x] == 0) 			// Si no está visible y no muestra vecinos se puede marcar
 				minas.label[y][x] = minas.flagged;
+			
+			if(counter == this.bombs)		// Cuando se marquen todas las minas, se ganará
+				inGame = false;
 		}
 	}
 	
